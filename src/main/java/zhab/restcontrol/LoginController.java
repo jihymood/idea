@@ -11,20 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 import zhab.dao.UserMapper;
 import zhab.model.BasePointModel;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by zxm on 2017/4/10.
- *
- *
+ * <p>
+ * <p>
  * android studio中使用retrofit请求数据，地址为"http://172.16.108.137:10002/user1/getStringList"
  * control控制类中根据请求的地址到相应的方法中，该方法中有到包下的Mapper接口，
  * 然后该接口类在对应的resources包下的.xml文件，这里是关于数据库的增删改查
- *
- *
- *
- *
- *
  */
 
 @RestController
@@ -58,12 +55,12 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/getPointList", method = RequestMethod.GET)
-    public ResponseObj<List<BasePointModel>> getPointList() {
+    public ResponseObj<Map<String, List<BasePointModel>>> getPointList() {
         try {
             List<BasePointModel> list = userMapper.getPointList();
-//            List<BasePointModel> list = new ArrayList<>();
-//            list.add(new BasePointModel(1, 22f, 22f, "ddxx", "dd", "dd", "dd", "dd"));
-            return new ResponseObj<List<BasePointModel>>(list, null);
+            Map<String, List<BasePointModel>> map = new HashMap<>();
+            map.put("layerId", list);
+            return new ResponseObj<>(map, null);
         } catch (Exception e) {
             e.printStackTrace();
             //服务器返回异常
