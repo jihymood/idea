@@ -42,7 +42,7 @@
 
 
     <select id="getPointList" resultMap="basePoint">
-        SELECT * FROM basepointinfo WHERE pointId=2
+        SELECT * FROM basepointinfo
     </select>
 
     <select id="getStringList" resultMap="basePoint2">

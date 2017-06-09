@@ -2,7 +2,8 @@ datasource:
   dbone:
 #    url: jdbc:oracle:thin:@132.228.226.11:1521:JSEIPDB
 
-    url: jdbc:mysql://172.16.0.218:3306/test?autoReconnect=true
+    url: jdbc:mysql://172.16.0.218:3306/layertest?autoReconnect=true # test指数据库，另外区分mysql与oracle的url地址
+#    url: jdbc:mysql://172.16.0.218:3306/test?autoReconnect=true # test指数据库，另外区分mysql与oracle的url地址
     username: huangjihai
     password: h123456
     driver-class-name: com.mysql.jdbc.Driver
@@ -31,7 +32,7 @@ interfaceUrl:
   ipUrl: http://132.228.226.11
 #  ftpUrl: http://132.228.226.11
 #  ftpUrl: http://172.16.214.24
-  ftpUrl: http://172.16.108.137
+  ftpUrl: http://172.16.108.137  # 本机的ip
   oaUrl: http://nt.jsoa.net
   vedioUrl: http://58.223.251.5:8080/axis2/services/GEForMsp
 

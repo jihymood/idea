@@ -26,6 +26,9 @@ public class BasePointModel {
         this.selfWeak = selfWeak;
     }
 
+    public BasePointModel() {  //貌似必须要有无参构造函数?
+    }
+
     public int getPointId() {
         return pointId;
     }

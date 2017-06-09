@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import zhab.dao.UserMapper;
 import zhab.model.BasePointModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -61,10 +60,9 @@ public class LoginController {
     @RequestMapping(value = "/getPointList", method = RequestMethod.GET)
     public ResponseObj<List<BasePointModel>> getPointList() {
         try {
-//            List<String> basePoint = userMapper.getPointList();
-//            return new ResponseObj<List<String>>(basePoint, null);
-            List<BasePointModel> list = new ArrayList<>();
-            list.add(new BasePointModel(1, 22f, 22f, "ddxx", "dd", "dd", "dd", "dd"));
+            List<BasePointModel> list = userMapper.getPointList();
+//            List<BasePointModel> list = new ArrayList<>();
+//            list.add(new BasePointModel(1, 22f, 22f, "ddxx", "dd", "dd", "dd", "dd"));
             return new ResponseObj<List<BasePointModel>>(list, null);
         } catch (Exception e) {
             e.printStackTrace();
