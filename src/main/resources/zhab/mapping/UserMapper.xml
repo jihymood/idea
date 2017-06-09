@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="zhab.dao.UserMapper">
+
+
+    <resultMap type="zhab.model.BasePointModel" id="basePoint">
+        <!--<result column="T2" property="attachId"/>-->
+
+    </resultMap>
+
+    <resultMap type="zhab.model.TestStr" id="basePoint2">
+        <result column="T2" property="str"/>
+    </resultMap>
+
+
+
+
+
+
+
+
+
+    <resultMap type="zhab.model.UserModel" id="InterListUser">
+        <result column="NAME_ALPHABET" property="userId"/>
+        <result column="REAL_NAME" property="userName"/>
+    </resultMap>
+
+    <resultMap type="zhab.model.UserModel" id="resultListUser">
+        <result column="USER_ID" property="userId"/>
+        <result column="USER_NAME" property="userName"/>
+        <result column="PASSWORD" property="password"/>
+        <result column="COM_ID" property="deptId"/>
+        <result column="COM_NAME" property="deptName"/>
+        <result column="USER_PHONE" property="phone"/>
+        <result column="USER_TYPE" property="type"/>
+        <result column="USER_STATUS" property="status"/>
+        <result column="CREATE_TIME" property="createTimeStr"/>
+        <result column="CHECK_CITY" property="checkCity"/>
+    </resultMap>
+
+
+    <select id="getPointList" resultMap="basePoint">
+        SELECT * FROM basepointinfo WHERE pointId=2
+    </select>
+
+    <select id="getStringList" resultMap="basePoint2">
+        SELECT T2 FROM test.test2
+    </select>
+
+</mapper>
