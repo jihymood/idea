@@ -16,6 +16,16 @@ import java.util.List;
 
 /**
  * Created by zxm on 2017/4/10.
+ *
+ *
+ * android studio中使用retrofit请求数据，地址为"http://172.16.108.137:10002/user1/getStringList"
+ * control控制类中根据请求的地址到相应的方法中，该方法中有到包下的Mapper接口，
+ * 然后该接口类在对应的resources包下的.xml文件，这里是关于数据库的增删改查
+ *
+ *
+ *
+ *
+ *
  */
 
 @RestController
